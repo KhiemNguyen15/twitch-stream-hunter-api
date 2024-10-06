@@ -1,0 +1,9 @@
+services:
+  api:
+    image: ghcr.io/khiemnguyen15/twitch-stream-hunter-api:master
+    restart: always
+    environment:
+      MONGODB_URI: ...
+      DB_NAME: ...
+    expose:
+      - 8080
