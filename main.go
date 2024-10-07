@@ -33,7 +33,7 @@ func init() {
 func main() {
 	r := gin.Default()
 
-	r.SetTrustedProxies([]string{"127.0.0.1"})
+	r.SetTrustedProxies(nil)
 
 	r.GET("/ping", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, gin.H{
@@ -44,5 +44,5 @@ func main() {
 	routes.RouteGames(r)
 	routes.RouteWebhooks(r)
 
-	r.Run("localhost:8080")
+	r.Run("0.0.0.0:8080")
 }
