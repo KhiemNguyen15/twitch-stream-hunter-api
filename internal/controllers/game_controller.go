@@ -84,7 +84,7 @@ func DeleteGame() gin.HandlerFunc {
 		if result.DeletedCount < 1 {
 			c.JSON(http.StatusNotFound, gin.H{
 				"status":  http.StatusNotFound,
-				"message": err.Error(),
+				"message": "game not found",
 			})
 			return
 		}
