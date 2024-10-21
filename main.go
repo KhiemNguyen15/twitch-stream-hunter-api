@@ -35,12 +35,6 @@ func main() {
 
 	r.SetTrustedProxies(nil)
 
-	r.GET("/ping", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{
-			"ping": "pong",
-		})
-	})
-
 	routes.RouteGames(r)
 	routes.RouteWebhooks(r)
 
